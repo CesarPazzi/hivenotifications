@@ -13,7 +13,7 @@ $response = Invoke-WebRequest -Uri $uri -Method Post -Body $jsonBody -UseBasicPa
 
 for ($i = 0; $i -lt $response.Count; $i++){
     # reads $response.msg[$i] and checks if contains the words "replied to your post"
-    if ($response.msg[$i].Contains("replied to your post"))
+    if ($response.msg[$i].Contains("replied to your post") -or $response.msg[$i].Contains("replied to your comment") -or $response.msg[$i].Contains("mentioned you"))
     {
         Write-Host $($response.id[$i])
         Write-Host $($response.msg[$i])
