@@ -11,6 +11,12 @@ id = 1
 $account = (ConvertFrom-Json $jsonBody).params.account
 $response = Invoke-WebRequest -Uri $uri -Method Post -Body $jsonBody -UseBasicParsing | ConvertFrom-Json | Select-Object -ExpandProperty result
 
+# if Invoke-WebRequest fails, do nothing
+if ($null -eq $response){
+        Write-Host "Failed To Get Notifications, Check Internet Connection"
+}
+else{
+
 $latest_local_id = Get-Content -Path "$account.txt" -ErrorAction SilentlyContinue | Select-Object -First 1
 $latest_id = $response[0].id
 
@@ -58,3 +64,4 @@ else{
         Write-Host "No new notifications for account $account"
 }
 $latest_id | Set-Content -Path "$account.txt" -Force
+}
