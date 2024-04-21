@@ -3,7 +3,7 @@ $jsonBody = @{
 jsonrpc = "2.0";
 method = "bridge.account_notifications";
 params = @{
-account = "t0xicgh0st";
+account = "cronicasdelcesar";
 limit = 100
 };
 id = 1
