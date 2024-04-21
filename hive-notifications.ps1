@@ -1,9 +1,22 @@
+###########   CONFIGURATION   ###########
+
+# Choose a public node to connect, check nodes here: https://developers.hive.io/quickstart/#quickstart-hive-full-nodes
+# Remember to add https:// before the URL provided in the webpage
+# Some nodes are: ['https://api.hive.blog', 'https://api.openhive.network', 'https://hiveapi.actifit.io']
+
 $uri = 'https://api.hive.blog'
+$account_name = "cronicasdelcesar" # Account name without @ symbol
+
+########   END OF CONFIGURATION   ########
+
+
+
+
 $jsonBody = @{
 jsonrpc = "2.0";
 method = "bridge.account_notifications";
 params = @{
-account = "cronicasdelcesar";
+account = $account_name;
 limit = 100
 };
 id = 1
