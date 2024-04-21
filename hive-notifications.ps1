@@ -1,0 +1,1 @@
+New-BurntToastNotification -Text 'Yoooo, this is a toast notification... from PowerShell!'
