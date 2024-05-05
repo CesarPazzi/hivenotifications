@@ -4,8 +4,16 @@
 # Remember to add https:// before the URL provided in the webpage
 # Some nodes are: ['https://api.hive.blog', 'https://api.openhive.network', 'https://hiveapi.actifit.io']
 
+
+
+# NODE
 $uri = 'https://api.hive.blog'
-$account_name = "cronicasdelcesar" # Account name without @ symbol
+
+# ACCOUNT NAME WITHOUT @
+$account_name = "cronicasdelcesar" 
+
+
+
 
 ########   END OF CONFIGURATION   ########
 
