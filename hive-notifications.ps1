@@ -34,6 +34,7 @@ if ($null -eq $response){
 else{
     $latest_local_id = Get-Content -Path "$account.txt" -ErrorAction SilentlyContinue | Select-Object -First 1
     $latest_id = $response[0].id
+    Write-Host $latest_id
 
     if ($latest_local_id -ne $latest_id)
     {
