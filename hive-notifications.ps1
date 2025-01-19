@@ -33,8 +33,10 @@ if ($null -eq $response){
 }
 else{
     $latest_local_id = Get-Content -Path "$account.txt" -ErrorAction SilentlyContinue | Select-Object -First 1
+    Write-Host ""
+    Write-Host "READING LATEST LOCAL ID FROM $account.txt: "$latest_local_id
     $latest_id = $response[0].id
-    Write-Host $latest_id
+    Write-Host "LATEST ID FROM RESQUEST: "$latest_id
 
     if ($latest_local_id -ne $latest_id)
     {
@@ -79,7 +81,9 @@ else{
     }
     else
     {
-        Write-Host "NO HAY NOTIFICACIONES" 
+        Write-Host""
+        Write-Host "NO NOTIFICATIONS" 
     }
+    Write-Host""
     $latest_id | Set-Content -Path "$account.txt" -Force
 }
